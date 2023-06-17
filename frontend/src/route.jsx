@@ -9,6 +9,7 @@ import Dashboard from "./views/Dashboard.jsx";
 
 /**
  * To create a router, we need to import the createBrowserRouter function from react-router-dom.
+ * Creating Frontend App template ...
  */
 const router = createBrowserRouter([
   {
