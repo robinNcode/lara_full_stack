@@ -7,7 +7,9 @@ import DefaultLayout from "./components/DefaultLayout.jsx";
 import GuestLayout from "./components/GuestLayout.jsx";
 import Dashboard from "./views/Dashboard.jsx";
 
-
+/**
+ * To create a router, we need to import the createBrowserRouter function from react-router-dom.
+ */
 const router = createBrowserRouter([
   {
     path: '/', element: <DefaultLayout/>,
