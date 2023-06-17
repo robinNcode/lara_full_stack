@@ -19,7 +19,7 @@ export default function Signup() {
       confirm_password: confirmPasswordRef.current.value
     }
 
-    axiosClient.post("/signup", payload)
+    axiosClient.post("/register", payload)
       .then(({result}) => {
         /**
          * If the user is successfully created, we will set the current user and token
