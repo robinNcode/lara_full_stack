@@ -1,16 +1,28 @@
 import {Navigate, Link, Outlet} from "react-router-dom";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
 import React from "react";
-
-function onLogOut(evt) {
-  evt.preventDefault();
-}
+import axiosClient from "../axios_client.js";
 
 export default function () {
   const {currentUser, token} = useStateContext();
 
   if (!token) {
     return <Navigate to={"/signin"}/>;
+  }
+
+  function onLogOut(e) {
+    e.preventDefault();
+
+    axiosClient.post("/logout")
+      .then((result) => {
+        if (result.data.status === "success") {
+          localStorage.removeItem("ACCESS_TOKEN");
+          window.location.href = "/signin";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (

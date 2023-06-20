@@ -21,7 +21,7 @@ axiosClient.interceptors.response.use((response)=>{
 
   if(response.status === 401){
     localStorage.removeItem("ACCESS_TOKEN");
-    window.location.href = "/login";
+    window.location.href = "/signin";
   }
   else if(response.status === 403){
     window.location.href = "/";

@@ -29,7 +29,8 @@ export default function Signin() {
          * If the user is successfully created, we will set the current user and token
          * automatically redirect to the home page ...
          */
-        console.log(result);
+        setCurrentUser(result.data.data.user);
+        setToken(result.data.data.token);
       })
       .catch((err) => {
         const response = err.response;

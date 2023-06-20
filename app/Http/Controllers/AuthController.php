@@ -68,8 +68,9 @@ class AuthController extends Controller
 
     public function logout(Request $request): JsonResponse
     {
-        $request->user()->currentAccessToken()->delete();
-
-        return $this->success([], 'Logout successful!, Your token has been destroyed!');
+        if($request->user()->currentAccessToken()->delete())
+            return $this->success([], 'Logout successful!, Your token has been destroyed!');
+        else
+            return $this->error([], 'Logout failed!, Your token has not been destroyed!', 401);
     }
 }
