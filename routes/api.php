@@ -28,5 +28,6 @@ Route::get('/check', function (){
  * Protected Routes ...
  */
 Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/user', [AuthController::class, 'activeUser']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });

@@ -1,14 +1,26 @@
 import {Navigate, Link, Outlet} from "react-router-dom";
 import {useStateContext} from "../contexts/ContextProvider.jsx";
-import React from "react";
+import React, {useEffect} from "react";
 import axiosClient from "../axios_client.js";
 
 export default function () {
-  const {currentUser, token} = useStateContext();
+  const {currentUser, token, setCurrentUser} = useStateContext();
 
   if (!token) {
     return <Navigate to={"/signin"}/>;
   }
+
+  useEffect(() => {
+    axiosClient.get("/user")
+      .then((result) => {
+        if (result.data.status === "success") {
+          setCurrentUser(result.data.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   function onLogOut(e) {
     e.preventDefault();

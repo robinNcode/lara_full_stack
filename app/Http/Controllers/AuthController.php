@@ -33,6 +33,14 @@ class AuthController extends Controller
         ], 'Login successful!');
     }
 
+    public function activeUser(Request $request): JsonResponse
+    {
+        if(!$request->user())
+            return $this->error([], 'User is not authenticated!', 401);
+        else
+            return $this->success($request->user(), 'User is authenticated!');
+    }
+
     /**
      * Check if the user is authenticated.
      */
