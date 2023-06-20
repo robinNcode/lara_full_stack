@@ -15,6 +15,11 @@ class AuthController extends Controller
 {
     use HttpResponses;
 
+    public function loginView()
+    {
+        return view('auth.login');
+    }
+
     /**
      */
     public function login(LoginUserRequest $request): JsonResponse
