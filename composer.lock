@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa322c53454393ed775cfe4807d54a50",
+    "content-hash": "43a4995072612085edcfcc46c10f87d7",
     "packages": [
         {
             "name": "brick/math",
@@ -2993,6 +2993,63 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "robinncode/onubadok",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robinNcode/onubadok.git",
+                "reference": "20a3b15af24e6f7b281b507c89aed515efb583fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robinNcode/onubadok/zipball/20a3b15af24e6f7b281b507c89aed515efb583fd",
+                "reference": "20a3b15af24e6f7b281b507c89aed515efb583fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Robinncode\\Onubadok\\OnubadokServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Robinncode\\Onubadok\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MsM Robin",
+                    "email": "msmrobin518@gmail.com"
+                }
+            ],
+            "description": "This is a Composer package for translating your PHP software to other languages, primarily in Bengali.",
+            "homepage": "https://github.com/robinNcode/onubadok",
+            "keywords": [
+                "language",
+                "laravel",
+                "localization",
+                "php",
+                "translation"
+            ],
+            "support": {
+                "documentation": "not yet",
+                "email": "msmrobin518@gmail.com",
+                "issues": "https://github.com/robinNcode/onubadok/issues",
+                "source": "https://github.com/robinNcode/onubadok/tree/v1.0.2"
+            },
+            "time": "2023-06-02T02:58:33+00:00"
         },
         {
             "name": "symfony/console",
